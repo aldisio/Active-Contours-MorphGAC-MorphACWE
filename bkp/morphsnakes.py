@@ -105,11 +105,7 @@ curvop = fcycle([SIoIS, ISoSI])
 # Stopping factors (function g(I) in the paper).
 def gborders(img, alpha=1.0, sigma=1.0):
     """Stopping criterion for image borders."""
-    
-    # AM: gaussian_gradient_magnitude é uma função de scipy.ndimage.filters para
-    # o calculo multidimensional da magnitude do gradiente usando derivadas Gaussianas. 
     # The norm of the gradient.
-    
     gradnorm = gaussian_gradient_magnitude(img, sigma, mode='constant')
     return 1.0/np.sqrt(1.0 + alpha*gradnorm)
 
