@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
+from scipy import ndimage
+from scipy.ndimage import gaussian_gradient_magnitude
 
 def getInitialPoint(img_path):
     iniX=200
@@ -221,3 +223,6 @@ def getInitialPoint(img_path):
     #plt.imshow(output)  
 
     return [iniX, iniY]     
+
+###########################################################################################
+
